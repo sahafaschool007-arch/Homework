@@ -462,6 +462,7 @@ $("#loginForm").addEventListener("submit", e => {
     return;
   }
   if(S.mode === "loading"){ $("#loginErr").textContent = "جارٍ تحميل المنصة، أعد المحاولة بعد لحظة"; return; }
+  if(LOGIN_PASS === null){ $("#loginErr").textContent = "ملف البيانات data.enc.json غير موجود في المستودع. نزّله من المنصة الأصلية (الإعدادات) وارفعه بجانب index.html"; return; }
   if(u === LOGIN_USER && p === LOGIN_PASS){ setAuthed(true); $("#loginErr").textContent=""; showApp(); }
   else $("#loginErr").textContent = "اسم المستخدم أو كلمة المرور غير صحيحة";
 });
